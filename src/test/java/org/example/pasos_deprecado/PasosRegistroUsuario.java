@@ -1,4 +1,4 @@
-package org.example.pasos;
+package org.example.pasos_deprecado;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -6,7 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.core.Serenity;
-import org.example.paginas.PaginaRegistro;
+import org.example.paginas_deprecado.PaginaRegistro;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 

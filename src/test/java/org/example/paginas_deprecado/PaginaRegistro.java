@@ -1,4 +1,4 @@
-package org.example.paginas;
+package org.example.paginas_deprecado;
 
 import net.serenitybdd.annotations.DefaultUrl;
 import net.serenitybdd.core.pages.PageObject;

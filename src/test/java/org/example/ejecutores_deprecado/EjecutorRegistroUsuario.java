@@ -1,4 +1,4 @@
-package org.example.ejecutores;
+package org.example.ejecutores_deprecado;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
@@ -17,7 +17,7 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 )
 @ConfigurationParameter(
         key = GLUE_PROPERTY_NAME,
-        value = "org.example.pasos"
+        value = "org.example.pasos_deprecado"
 )
 public class EjecutorRegistroUsuario {
 }
