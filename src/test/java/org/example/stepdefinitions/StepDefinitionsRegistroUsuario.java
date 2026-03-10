@@ -15,7 +15,9 @@ import org.example.utilidades.Constantes;
 
 import java.time.Duration;
 
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotCurrentlyVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static org.example.ui.PaginaRegistroUI.BOTON_CREAR_CUENTA;
 import static org.example.ui.PaginaRegistroUI.MENSAJE_ERROR;
 
 public class StepDefinitionsRegistroUsuario {
@@ -61,11 +63,9 @@ public class StepDefinitionsRegistroUsuario {
 
     @Then("la cuenta se crea a través de Firebase Authentication")
     public void laCuentaSeCreaATravesDeFirebaseAuthentication() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(BOTON_CREAR_CUENTA, isNotCurrentlyVisible()).forNoMoreThan(Duration.ofSeconds(10))
+        );
     }
 
     @And("el usuario es redirigido al dashboard")

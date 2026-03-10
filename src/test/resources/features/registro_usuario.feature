@@ -19,7 +19,7 @@ Feature: Registro de Usuario
   Scenario: Registro falla cuando el correo ya está registrado
     Given que el usuario está en la página de registro
     When el usuario ingresa "Correo Usado" en el campo nombre
-    And el usuario ingresa "ana.garcia@correo.com" en el campo correo electrónico
+    And el usuario ingresa "dianelizbty@gmail.com" en el campo correo electrónico
     And el usuario ingresa "Passw0rd!" en el campo contraseña
     And el usuario ingresa "Passw0rd!" en el campo confirmación de contraseña
     And hace clic en el botón "Crear Cuenta"
