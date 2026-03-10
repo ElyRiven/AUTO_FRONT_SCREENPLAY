@@ -1,0 +1,44 @@
+#### US-001 — Registro de Usuario con Correo y Contraseña
+
+**Descripción:**
+
+> Como **Invitado**,
+> quiero **crear una cuenta usando mi nombre completo, correo electrónico, contraseña y confirmación de contraseña**,
+> para **poder acceder a la Budget Management App con mi propio espacio personal.**
+
+**Validación INVEST:**
+
+| Principio | ✅ |
+|---|---|
+| Independiente | El flujo de registro es autónomo y no depende de otras historias. |
+| Negociable | Los requisitos de campos están definidos por el esquema Zod y pueden ajustarse. |
+| Valioso | Permite a nuevos usuarios acceder al sistema. |
+| Estimable | Formulario pequeño y llamada de registro a Firebase claramente delimitada. |
+| Pequeño | Una sola página de formulario; acotado al flujo de registro. |
+| Comprobable | Cubierto por `RegisterForm.test.tsx` y `RegisterForm.integration.test.tsx`. |
+
+**Criterios de Aceptación (Gherkin):**
+
+```gherkin
+Funcionalidad: Registro de Usuario
+
+  Escenario: Registro exitoso con credenciales válidas
+    Dado que el usuario está en la página de registro (/register)
+    Cuando el usuario ingresa su nombre completo
+    Y ingresa su correo electrónico
+    Y ingresa una contraseña
+    Y ingresa la confirmación de su contraseña
+    Y hace clic en el botón "Crear Cuenta"
+    Entonces la cuenta se crea a través de Firebase Authentication
+    Y el usuario es redirigido al dashboard (/dashboard)
+
+  Escenario: Registro falla cuando el correo ya está registrado
+    Dado que el usuario ingresa un correo ya registrado en el sistema
+    Cuando hace clic en "Crear Cuenta"
+    Entonces se muestra un mensaje de error en la parte superior del formulario
+    Y el usuario permanece en la página de registro
+```
+
+**Actor(es):** Invitado  
+**Componentes Relacionados:** `RegisterForm.tsx`, `RegisterPage.tsx`, `authService.ts`, `authRepository` (Firebase), `registerSchema.ts`  
+**Dependencias:** Proyecto de Firebase Authentication configurado y accesible.
