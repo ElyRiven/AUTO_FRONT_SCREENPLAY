@@ -5,14 +5,13 @@
 - Proyecto de Automatización de pruebas E2E en Java.
 - El proyecto utiliza Gradle como sistema de construcción.
 - Framework principal: Serenity BDD.
-- Patrón de diseño: Page Object Model (POM).
+- Patrón de diseño: Screenplay Model.
 - Los casos de prueba se reconocen y ejecutan usando archivos `.feature` escritos en lenguaje Gherkin.
 
 ### Buenas Prácticas de Desarrollo
 
 - Mantener el código limpio, modular y reutilizable.
-- Seguir el patrón POM para separar la lógica de interacción de páginas y los pasos de prueba.
-- Utilizar la anotación `@FindBy` de Page Factory para crear los modelos POM y localizar elementos.
+- Seguir el patrón Screenplay para separar tareas, elementos UI, ejecutores, escenarios, etc.
 - Escribir métodos y clases con una única responsabilidad.
 - Evitar la duplicidad de código; reutilizar componentes y utilidades.
 - Documentar métodos y clases con comentarios claros y concisos.
