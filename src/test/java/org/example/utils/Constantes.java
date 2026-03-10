@@ -1,4 +1,4 @@
-package org.example.utilidades;
+package org.example.utils;
 
 public final class Constantes {
 

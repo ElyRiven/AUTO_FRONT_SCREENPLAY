@@ -7,11 +7,12 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+
+import org.example.hooks.AbrirNavegador;
 import org.example.questions.LaUrlActual;
 import org.example.questions.LaVisibilidadDelMensajeError;
-import org.example.tasks.AbrirNavegador;
 import org.example.tasks.RegistrarUsuario;
-import org.example.utilidades.Constantes;
+import org.example.utils.Constantes;
 
 import java.time.Duration;
 
