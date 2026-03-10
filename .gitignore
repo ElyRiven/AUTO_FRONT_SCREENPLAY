@@ -7,4 +7,7 @@ build
 # Ignore Kotlin plugin data
 .kotlin
 
+#Ignore VS Code Configurations
+.vscode
+
 target
