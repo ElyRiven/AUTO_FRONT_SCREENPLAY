@@ -18,6 +18,11 @@ AUTO_FRONT_SCREENPLAY/
     └── test/
         ├── java/
         │   └── org/example/
+        │       ├── hooks/              # Configuración de contexto para los escenarios
+        │       │   └── AbrirNavegador.java
+        │       ├── questions/          # Preguntas que el actor puede hacer para obtener información del sistema
+        │       │   ├── LaUrlActual.java
+        │       │   └── LaVisibilidadDelMensajeError.java
         │       ├── runners/            # Suite runners (JUnit Platform + Cucumber engine)
         │       │   └── TestRunnerRegistroUsuario.java
         │       ├── stepdefinitions/    # Step definitions: conectan los pasos Gherkin con las tareas del actor
@@ -25,14 +30,10 @@ AUTO_FRONT_SCREENPLAY/
         │       │   │   └── Hook.java
         │       │   └── StepDefinitionsRegistroUsuario.java
         │       ├── tasks/              # Tareas que el actor puede realizar (interacciones de alto nivel)
-        │       │   ├── AbrirNavegador.java
         │       │   └── RegistrarUsuario.java
-        │       ├── questions/          # Preguntas que el actor puede hacer para obtener información del sistema
-        │       │   ├── LaUrlActual.java
-        │       │   └── LaVisibilidadDelMensajeError.java
         │       ├── ui/                 # Elementos de la interfaz de usuario (Targets)
         │       │   └── PaginaRegistroUI.java
-        │       └── utilidades/         # Constantes y utilidades compartidas
+        │       └── utils/         # Constantes y utilidades compartidas
         │           └── Constantes.java
         └── resources/
             └── features/               # Escenarios de prueba en lenguaje Gherkin
