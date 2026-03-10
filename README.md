@@ -1,15 +1,15 @@
-# Automatización del proyecto Budget Management App con Serenity POM
+# Automatización del proyecto Budget Management App con Serenity Screenplay
 
 ## Descripción
 
-Este proyecto implementa la automatización de pruebas funcionales de la aplicación web [**Budget Management App**](https://github.com/majoymajo/Budget_Management_App), una aplicación de gestión de presupuestos personal con autenticación mediante Firebase. Las pruebas están diseñadas con el patrón **Page Object Model (POM)** sobre el framework **Serenity BDD**, combinando **Cucumber** para la definición de escenarios en lenguaje Gherkin y **Selenium WebDriver** para la interacción con el navegador. El objetivo es validar de forma automatizada y reproducible los flujos críticos del frontend relacionados con el registro de usuarios.
+Este proyecto implementa la automatización de pruebas funcionales de la aplicación web [**Budget Management App**](https://github.com/majoymajo/Budget_Management_App), una aplicación de gestión de presupuestos personal con autenticación mediante Firebase. Las pruebas están diseñadas con el patrón **Screenplay** sobre el framework **Serenity BDD**, combinando **Cucumber** para la definición de escenarios en lenguaje Gherkin y **Selenium WebDriver** para la interacción con el navegador. El objetivo es validar de forma automatizada y reproducible los flujos críticos del frontend relacionados con el registro de usuarios.
 
 ---
 
 ## Estructura del proyecto
 
 ```
-AUTO_FRONT_POM_FACTORY/
+AUTO_FRONT_SCREENPLAY/
 ├── build.gradle                        # Configuración de dependencias y plugins de Gradle
 ├── serenity.properties                 # Configuración de Serenity (driver, capturas, nombre del proyecto)
 ├── gradle.properties                   # Propiedades globales de Gradle
@@ -18,12 +18,20 @@ AUTO_FRONT_POM_FACTORY/
     └── test/
         ├── java/
         │   └── org/example/
-        │       ├── ejecutores/         # Suite runners (JUnit Platform + Cucumber engine)
-        │       │   └── EjecutorRegistroUsuario.java
-        │       ├── paginas/            # Page Objects: encapsulan los elementos y acciones de cada página
-        │       │   └── PaginaRegistro.java
-        │       ├── pasos/              # Step definitions: conectan los pasos Gherkin con los Page Objects
-        │       │   └── PasosRegistroUsuario.java
+        │       ├── runners/            # Suite runners (JUnit Platform + Cucumber engine)
+        │       │   └── TestRunnerRegistroUsuario.java
+        │       ├── stepdefinitions/    # Step definitions: conectan los pasos Gherkin con las tareas del actor
+        │       │   ├── Hooks/          # Hooks de inicialización de escenarios
+        │       │   │   └── Hook.java
+        │       │   └── StepDefinitionsRegistroUsuario.java
+        │       ├── tasks/              # Tareas que el actor puede realizar (interacciones de alto nivel)
+        │       │   ├── AbrirNavegador.java
+        │       │   └── RegistrarUsuario.java
+        │       ├── questions/          # Preguntas que el actor puede hacer para obtener información del sistema
+        │       │   ├── LaUrlActual.java
+        │       │   └── LaVisibilidadDelMensajeError.java
+        │       ├── ui/                 # Elementos de la interfaz de usuario (Targets)
+        │       │   └── PaginaRegistroUI.java
         │       └── utilidades/         # Constantes y utilidades compartidas
         │           └── Constantes.java
         └── resources/
