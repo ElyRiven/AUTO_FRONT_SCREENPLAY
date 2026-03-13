@@ -16,10 +16,11 @@ import org.example.utils.Constantes;
 
 import java.time.Duration;
 
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotCurrentlyVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-import static org.example.ui.PaginaRegistroUI.BOTON_CREAR_CUENTA;
+import static org.example.ui.PaginaRegistroUI.BOTON_CREANDO_CUENTA;
 import static org.example.ui.PaginaRegistroUI.MENSAJE_ERROR;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class StepDefinitionsRegistroUsuario {
 
@@ -65,14 +66,14 @@ public class StepDefinitionsRegistroUsuario {
     @Then("la cuenta se crea a través de Firebase Authentication")
     public void laCuentaSeCreaATravesDeFirebaseAuthentication() {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(BOTON_CREAR_CUENTA, isNotCurrentlyVisible()).forNoMoreThan(Duration.ofSeconds(10))
+                WaitUntil.the(BOTON_CREANDO_CUENTA, isVisible()).forNoMoreThan(Duration.ofSeconds(5))
         );
     }
 
     @And("el usuario es redirigido al dashboard")
     public void elUsuarioEsRedirigidoAlDashboard() {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                Ensure.that(LaUrlActual.delNavegador()).contains("/dashboard")
+                WaitUntil.the(ExpectedConditions.urlContains("/dashboard")).forNoMoreThan(Duration.ofSeconds(10))
         );
     }
 

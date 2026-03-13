@@ -20,6 +20,9 @@ public class PaginaRegistroUI {
     public static final Target BOTON_CREAR_CUENTA = Target.the("botón Crear Cuenta")
             .locatedBy("//button[@type='submit' and text()='Crear Cuenta']");
 
+    public static final Target BOTON_CREANDO_CUENTA = Target.the("botón Creando Cuenta")
+            .locatedBy("//button[@type='submit' and text() = 'Creando cuenta...']");
+
     public static final Target MENSAJE_ERROR = Target.the("mensaje de error")
             .locatedBy("//div[text() = 'El correo electrónico ya está en uso']");
 }
